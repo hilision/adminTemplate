@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Data Table | Kiaalap - Kiaalap Admin Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Bootstrap CSS
+		============================================ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="editor/css/editormd.min.css" />
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- Start Welcome area -->
+    <div class="data-table-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div id="editormd">
+                            <textarea style="display:none;">### Hello Editor.md !</textarea>
+                            <!-- html textarea 需要开启配置项 saveHTMLToTextarea == true -->
+                            <textarea class="editormd-html-textarea" name="$id-html-code"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jquery============================================ -->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+		============================================ -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="editor/editormd.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var editor = editormd("editormd", {
+                path: "lib/", // Autoload modules mode, codemirror, marked... dependents libs path
+                width: "95%",
+                height: 600,
+                theme: "dark",
+                previewTheme: "dark",
+                editorTheme: "pastel-on-dark",
+                watch: false,
+                saveHTMLToTextarea: true,
+                toolbarIcons: function () {
+                    // Or return editormd.toolbarModes[name]; // full, simple, mini
+                    // Using "||" set icons align right.
+                    return ["undo", "redo", "|", "bold", "del", "italic", "quote", "uppercase", "|", "h1", "h2", "h3", "h4", "h5", "h6", "|", "list-ul", "list-ol", "hr", "|", "link", "reference-link", "image", "code", "preformatted-text", "code-block", "table", "datetime", "emoji", "html-entities", "pagebreak", "|", "goto-line", "watch","|", "preview", "search", "|", "fullscreen", "clear", "|", "help", "info", "save"]
+                },
+                // toolbarIcons : "full", // You can also use editormd.toolbarModes[name] default list, values: full, simple, mini.
+                toolbarIconsClass: {
+                    save: "fa-save"  // 指定一个FontAawsome的图标类
+                },
+                lang: {
+                    toolbar: {
+                        save: "保存"
+                    }
+                },
+                 // 自定义工具栏按钮的事件处理
+                toolbarHandlers: {
+                    /**
+                     * @param {Object}      cm         CodeMirror对象
+                     * @param {Object}      icon       图标按钮jQuery元素对象
+                     * @param {Object}      cursor     CodeMirror的光标对象，可获取光标所在行和位置
+                     * @param {String}      selection  编辑器选中的文本
+                     */
+                    save: function (cm, icon, cursor, selection) {
+                        //TODO 压缩后，传到后台
+                        var str = editor.getHTML();// 获取 Textarea 保存的 HTML 源码
+                        alert(str);
+                    }
+                },
+                onresize: function () {
+                    //Nothing to do
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
