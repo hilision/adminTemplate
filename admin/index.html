@@ -69,13 +69,13 @@
     </script>
 </head>
 
-<body>
+<body class="mini-navbar">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
     <!-- Start Left menu area -->
     <div class="left-sidebar-pro">
-        <nav id="sidebar" class="">
+        <nav id="sidebar" class="active">
             <div class="sidebar-header">
                 <a href="index.html"><img class="main-logo" src="img/logo/logo.png" alt="" /></a>
                 <strong><a href="index.html"><img src="img/logo/logosn.png" alt="" /></a></strong>
@@ -95,10 +95,12 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span>
+                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="fa fa-newspaper-o icon-wrap"></span>
                                 <span class="mini-click-non">文章</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Professors" href="javascript:void(0);" onclick="addPanle('data-table.html')"><span
+                                <li><a title="新建文章" href="javascript:void(0);" onclick="addPanle('compose.html')">
+                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                    <span
                                             class="mini-sub-pro">新建文章</span></a></li>
                                 <li><a title="Add Professor" href="add-professor.html"><span class="mini-sub-pro">Add
                                             Professor</span></a></li>
@@ -1222,7 +1224,7 @@
             </div>
             <!-- Mobile Menu end -->
         </div>
-        <div class="dynmicContent">
+        <div class="dynmicContent" style="padding-top: 30px;">
             <div class="analytics-sparkle-area">
                 <div class="container-fluid">
                     <div class="row">
@@ -1755,7 +1757,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer-copyright-area">
+        <!-- <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
@@ -1765,7 +1767,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!-- jquery
